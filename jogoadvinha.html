@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pergunta Especial</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f9f9f9;
+            box-sizing: border-box;
+        }
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+        .hidden {
+            display: none;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+        button {
+            margin: 10px;
+            padding: 15px 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        button.secondary {
+            background-color: #6c757d;
+        }
+        button.secondary:hover {
+            background-color: #5a6268;
+        }
+        p {
+            font-size: 1rem;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Você já conhece a pessoa mais bonita do mundo?</h1>
+    <button id="noButton">Não</button>
+    <button id="yesButton">Sim</button>
+
+    <div id="responseNo" class="hidden">
+        <img src="img/ind.jpg" alt="Imagem indignada">
+        <p>Como assim?! Tá bom te dou outra chance!</p>
+    </div>
+
+    <div id="responseYes" class="hidden">
+        <img src="img/imgflor.webp" alt="Imagem da pessoa mais bonita">
+        <p>Parabéns, você está olhando para ela no espelho!
+            Você é a pessoa mais linda do mundo! E cada vez me apaixono mais e mais por você!<br>
+            Sou apaixonada pelos seus olhos, sua covinha singular e seu jeitinho toda fofa.<br>
+            Obrigada por me encontrar! <br>
+            Da sua nerdola favorita S2
+        </p>
+    </div>
+
+    <script>
+        document.getElementById('noButton').addEventListener('click', function() {
+            document.getElementById('responseNo').classList.remove('hidden');
+            document.getElementById('responseYes').classList.add('hidden');
+        });
+
+        document.getElementById('yesButton').addEventListener('click', function() {
+            document.getElementById('responseYes').classList.remove('hidden');
+            document.getElementById('responseNo').classList.add('hidden');
+        });
+    </script>
+</body>
+</html>
